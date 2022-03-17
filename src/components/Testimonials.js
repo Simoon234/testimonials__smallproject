@@ -13,21 +13,20 @@ export const Testimonials = () => {
     const [loading, setLoading] = useState(false);
     const [top, setTop] = useState(false);
 
-    const getData = async () => {
-        try {
-            setLoading(true);
-            const res = await fetch(`https://jsonplaceholder.typicode.com/comments`);
-            const data = await res.json();
-            setData(data);
-            setLoading(false)
-        } catch (e) {
-            console.log(e.message)
+
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                setLoading(true);
+                const res = await fetch(`https://jsonplaceholder.typicode.com/comments`);
+                const data = await res.json();
+                setData(data);
+                setLoading(false)
+            } catch (e) {
+                console.log(e.message)
+            }
         }
-    }
-
-
-    useEffect(async () => {
-       await getData()
+        getData();
     }, []);
 
     useEffect(() => {
