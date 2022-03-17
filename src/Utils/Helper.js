@@ -1,7 +1,7 @@
-export const LoadingPage = ({text}) => {
+export const Helper = ({text}) => {
     return (
-        <div className='loading__status'>
-            <p>{text}</p>
+        <div className='helper'>
+            <h1>{text}</h1>
         </div>
     )
 }
